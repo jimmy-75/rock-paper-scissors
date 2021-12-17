@@ -8,9 +8,15 @@ function computerPlay() {
   return computerChoice;
 }
 //User input
-const playerInput = 'papEr';
+const playerInput = prompt('rock, paper, or scissors?');
+//Make playerInput lowercase
 const playerChoice = playerInput.toLowerCase();
-//make userInput case insensitive
+//Make variables for round #, playerScore, computerScore
+let round = 0;
+let playerScore = 0;
+let computerScore = 0;
+
+//make playerInput case insensitive
 const computerChoice = computerPlay();
 
 // create singleRound function
@@ -27,7 +33,7 @@ function playRound(playerChoice, computerChoice) {
       } else if (playerChoice == 'scissors'  && computerChoice == 'rock') {
           return 'You Lose!  Rock beats scissors!!!';
         } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
-            return 'You win!  Rock beats scissors!!!';
+            return 'You win!  Rock beats scissors!!!';;
           } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
               return 'You lose!  Scissors beat paper!!!';
             } else if (playerChoice == 'scissors'  && computerChoice == 'paper') {
@@ -35,3 +41,4 @@ function playRound(playerChoice, computerChoice) {
               }
 }   
 console.log(playRound(playerChoice, computerChoice))
+//
