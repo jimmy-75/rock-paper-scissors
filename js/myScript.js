@@ -1,12 +1,4 @@
-//Create computerPlay function
-function computerPlay() {
-  //create array for computerChoice
-  const choices = ['rock', 'paper', 'scissors']; 
-  //randomly select from array for computerChoice
-  var computerChoice = choices[Math.floor(Math.random()*choices.length)];
-  //return result for computerChoice
-  return computerChoice;
-}
+
 //User input
 let playerInput 
 let playerChoice
@@ -14,10 +6,21 @@ let playerChoice
 let playerScore = 0;
 let computerScore = 0;
 let playerWins, computerWins
-let computerChoice = computerPlay();
+let computerChoice
+
+//Create computerPlay function
+function computerPlay() {
+  //create array for computerChoice
+  let choices = ['rock', 'paper', 'scissors']; 
+  //randomly select from array for computerChoice
+  computerChoice = choices[Math.floor(Math.random()*choices.length)];
+  //return result for computerChoice
+  return computerChoice;
+}
 
 // create singleRound function
 function playRound(playerChoice, computerChoice) {
+  computerChoice = computerPlay();
   //take player input for playerChoice
   playerInput = prompt('Choose rock, paper, scissors');
   //make player input lowercase
@@ -27,6 +30,8 @@ function playRound(playerChoice, computerChoice) {
   //returns message
   //add score to player, computer
   if (playerChoice === computerChoice) {
+    playerWins = false;
+    computerWins = false;
     console.log('It\'s a tie!!!');
   } else if (playerChoice === 'rock' && computerChoice === 'paper') {
       playerWins = false;
@@ -74,7 +79,6 @@ function game() {
   }
 }
 
-game();
 
 
 
